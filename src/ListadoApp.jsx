@@ -9,7 +9,11 @@ const Item = ({ nombre, visto }) => {
 }
 
 
+
 export const ListadoApp = () => {
+    const addtask = () => (
+    setArreglo ([...arreglo, {nombre : 'nuevo', visto: false}])
+)
     let listadoSecciones = [
         {nombre:'Instalaciones necesarias', visto: true },
         {nombre:"Uso de Vite", visto:true},
@@ -28,6 +32,7 @@ export const ListadoApp = () => {
             <ol>
                 {arreglo.map(item => <Item key={item.nombre} nombre={item.nombre} visto={item.visto}></Item>)}
             </ol>
+            <button onClick={() => addtask()}>Agregar Tarea</button>
         </>
 
 
